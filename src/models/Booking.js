@@ -9,7 +9,7 @@ const BookingSchema = new mongoose.Schema({
       ref: 'User'
    },
    spot:{
-      //grava so a refencia do ID do usuário
+      //grava so a refencia do ID spot
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Spot'
    }
