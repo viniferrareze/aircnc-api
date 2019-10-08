@@ -8,7 +8,8 @@ const multer = require('multer');
 const uploadConfig = require('./config/upload');
 const DashboardController = require('./controllers/DashboardController');
 const BookingController = require('./controllers/BookingController');
-
+const ApprovalController = require('./controllers/ApprovalController');
+const RejectController = require('./controllers/RejectionController');
 
 const routes = express.Router();
 const upload = multer(uploadConfig);
@@ -22,6 +23,8 @@ routes.post('/spots/:spot_id/bookings', BookingController.store);
 
 routes.get('/dashboard', DashboardController.show);
 
+routes.post('/bookings/:booking_id/approvals', ApprovalController.store);
+routes.post('/bookings/:booking_id/rejects', RejectController.store);
 
 
 module.exports = routes;
